@@ -86,4 +86,4 @@ production:
   <<: *default
   database: geo-locater-api_production
   username: geo-locater-api
-  password: <%= ENV["geo-locater-api_DATABASE_PASSWORD"] %>
+  password: password

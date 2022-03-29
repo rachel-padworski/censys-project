@@ -1,8 +1,8 @@
 FROM ruby:3.1.1
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 WORKDIR /censys-app/geo-locater-api
-COPY Gemfile /censys-app/geo-locater-api/Gemfile
-COPY Gemfile.lock /censys-app/geo-locater-api/Gemfile.lock
+COPY Gemfile /Gemfile
+COPY Gemfile.lock /Gemfile.lock
 RUN bundle install
 
 COPY entrypoint.sh /usr/bin
