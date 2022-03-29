@@ -2,7 +2,7 @@ version: "3.9"
 services:
   frontend:
     image: "node:16.14.0"
-    working_dir: /censys-app/frontend
+    working_dir: /censys-app
     # volumes:
     #   - ./frontend:/censys-app/frontend
     ports:
@@ -18,16 +18,19 @@ services:
     # volumes:
     #   - ./tmp/db:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: geo-locater-api_development
+      POSTGRES_DB: backend_development
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
   backend:
-    build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    build: 
+      context: .
+      dockerfile: backend.Dockerfile
+    # command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     # volumes:
-    #   - ./backend:/censys-app/geo-locater-api
+    #   - ./backend:/censys-app/backend
     container_name: backend-censys
     ports:
       - "3000:3000"
     depends_on:
       - db
+    stdin_open: true
