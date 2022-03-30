@@ -19,11 +19,19 @@ To use this app, clone this [repo](https://github.com/rachel-padworski/censys-pr
 
 ## Usage
 
+From censys-app directory, run:
+
 ```
 docker-compose up
 ```
 Navigate to [http://localhost:3000/get_location?ip_address=128.101.101.101](http://localhost:3000/get_location?ip_address=128.101.101.101) to view the JSON API created by the database reader. In this instance the reader is outputting the location record for the IP address, 128.101.101.101. 
 
+As of 3/30 the frontend is unable to be run through Docker, but can be run locally while the backend is run through Docker. From censys-app/frontend directory, run:
+
+```
+npm start
+```
+you will then be navigated to http://localhost:3001/get_location.
 
 ## Contributing
 Bug reports and pull requests are welcome at [https://github.com/rachel-padworski/censys-app-frontend](https://github.com/rachel-padworski/censys-app-frontend). Contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/).
