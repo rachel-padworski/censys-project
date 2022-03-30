@@ -3,8 +3,8 @@ FROM node:16.14.0
 WORKDIR /censys-app/frontend
 # ENV PATH /censys-app/frontend/node_modules/.bin:$PATH
 COPY ./frontend /censys-app/frontend/
-# COPY package-lock.json ./
+
 RUN npm install
-# COPY . .
+
 EXPOSE 3001
 CMD ["npm", "start"]
