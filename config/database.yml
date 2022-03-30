@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   database: backend_development
+  username: postgres
+  password: password
   host: db
 
   # The specified database role being used to connect to postgres.
