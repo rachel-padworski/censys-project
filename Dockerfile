@@ -5,6 +5,6 @@ WORKDIR /censys-app/frontend
 COPY /frontend/package.json ./
 # COPY package-lock.json ./
 RUN npm install
-COPY . .
+# COPY . .
 EXPOSE 3001
 CMD ["npm", "start"]
