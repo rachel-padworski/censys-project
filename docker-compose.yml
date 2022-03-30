@@ -1,13 +1,15 @@
 version: "3.9"
 services:
   frontend:
-    image: "node:16.14.0"
-    working_dir: /frontend
-    # volumes:
-    #   - ./frontend:/censys-app/frontend
+    # image: "node:16.14.0"
+    build:
+      dockerfile: Dockerfile
+    # working_dir: /censys-app/frontend
+    volumes:
+      - ./frontend:/censys-app/frontend
+    container_name: frontend-censys
     ports:
       - "3001:3001"
-    container_name: frontend-censys
     depends_on:
       - backend
   db:
