@@ -9,7 +9,7 @@ class LocationsController < ApplicationController
 
   # GET /locations
   def get_location
-    reader = MaxMind::GeoIP2::Reader.new('app/assets/GeoLite2-City.mmdb')
+    reader = MaxMind::GeoIP2::Reader.new('backend-2/app/assets/GeoLite2-City.mmdb')
     record = reader.city(params[:ip_address])
     
     render json: {location: record.location}

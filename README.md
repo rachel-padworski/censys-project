@@ -1,16 +1,16 @@
-# Geo Locator API README
+# Geo Locator Censys Project README
 
 
 ## Overview
-* [About](https://github.com/rachel-padworski/api-geo-locator#about)
-* [Prerequisites](https://github.com/rachel-padworski/api-geo-locator#prerequisites)
-* [Installation](https://github.com/rachel-padworski/api-geo-locator#installation)
-* [Usage](https://github.com/rachel-padworski/api-geo-locator#usage)
-* [Contributing](https://github.com/rachel-padworski/api-geo-locator#contributing)
-* [License](https://github.com/rachel-padworski/api-geo-locator#license)
+* [About](https://github.com/rachel-padworski/censys-project#about)
+* [Prerequisites](https://github.com/rachel-padworski/censys-project#prerequisites)
+* [Installation](https://github.com/rachel-padworski/censys-project#installation)
+* [Usage](https://github.com/rachel-padworski/censys-project#usage)
+* [Contributing](https://github.com/rachel-padworski/censys-project#contributing)
+* [License](https://github.com/rachel-padworski/censys-project#license)
 
 ## About
-Geo Locator API reads the GeoLite2 API database file creating a way for a frontend app to connect to location data. It currently displays only the location data through location.record. Frontend [here](https://github.com/rachel-padworski/censys-app-frontend).
+Geo Locator API reads the GeoLite2 API database file creating a way for a frontend app to connect to location data. It currently displays only the location data through location.record.
 
 
 ## Prerequisites
@@ -22,18 +22,30 @@ Rails 7.0.2.3
 ```
 
 ## Installation
-To use this app, clone this backend [repo](https://github.com/rachel-padworski/api-geo-locator) and use it alongside the frontend [repo](https://github.com/rachel-padworski/censys-app-frontend).
+To use this app, clone this [repo](https://github.com/rachel-padworski/censys-project).
 
 
 ## Usage
+Run the following command:
 ```
-bundle install
-rails s 
+docker-compose up
 ```
-Navigate to the address provided by your terminal in your browser. 
+To view the API, navigate to [http://localhost:3000/get_location?ip_address=128.101.101.101](http://localhost:3000/get_location?ip_address=128.101.101.101) Feel free to change the IP address in the URL. This app doesn't account for subnetting.
+
+I currently have port conflicts that need to be resolved. You can open another terminal and run:
+```
+npm install
+npm start
+```
+OR
+```
+yarn install
+yarn start
+```
+Navigate to [http://localhost:3001/get_location](http://localhost:3001/get_location)
 
 ## Contributing
-Bug reports and pull requests are welcome at [https://github.com/rachel-padworski/api-geo-locator](https://github.com/rachel-padworski/api-geo-locator). Contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/).
+Bug reports and pull requests are welcome at [https://github.com/rachel-padworski/censys-project](https://github.com/rachel-padworski/censys-project). Contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/).
 
 ## License
 Distributed under the [MIT License](https://opensource.org/licenses/MIT)
