@@ -4,12 +4,12 @@ services:
     # image: "node:16.14.0"
     build:
       dockerfile: Dockerfile
-    # working_dir: /censys-app/frontend
+    # working_dir: /censys-project/frontend
     volumes:
-      - ./frontend:/censys-app/frontend
+      - ./frontend:/censys-project/frontend
     container_name: frontend-censys
     ports:
-      - "3000:3001"
+      - "3001:3001"
     depends_on:
       - backend
   db:
@@ -25,11 +25,11 @@ services:
       POSTGRES_PASSWORD: password
   backend:
     build: 
-      # context: .
+      context: .
       dockerfile: backend.Dockerfile
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "rm -f backend-2/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
-      - ./backend:/censys-app/backend-2
+      - ./backend:/censys-project/backend-2
     container_name: backend-censys
     ports:
       - "3000:3000"

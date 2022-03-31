@@ -3,6 +3,6 @@
 
 set -e
 
-rm -f /backend/tmp/pids/server.pid
+rm -f backend-2/tmp/pids/server.pid
 
 exec "$@"
